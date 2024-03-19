@@ -5,16 +5,24 @@ import secretVars
 import os
 from machine import reset
 
+print("boot running")
 with open('config.json','r') as f:
     config = json.load(f)
+
+checkList = []
+
+if config["BOOTFLAG"] == 1:
+    for index, file in enumerate(config['FILEMANIFEST']):
+        if file['CHECKFLAG']:
+            os.remove(file['FILENAME'])
+            os.rename("latest_" + file['FILENAME'], file['FILENAME'])
+            config['FILEMANIFEST'][index]['CHECKFLAG'] = False
+    config["BOOTFLAG"] = 0
     
-for index, file in enumerate(config['FILEMANIFEST']):
-    if file['CHECKFLAG']:
-        os.remove(file['FILENAME'])
-        os.rename("latest_" + file['FILENAME'], file['FILENAME'])
-        config['FILEMANIFEST'][index]['CHECKFLAG'] = False
-        
-with open('config.json', 'w') as f:
-    json.dump(config, f)
+    with open('config.json', 'w') as f:
+        json.dump(config, f)
     
-reset()
+    reset()
+
+else:
+    pass
