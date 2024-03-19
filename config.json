@@ -1,0 +1,12 @@
+{
+    "NAME": "testbox",
+    "VERSION": 3,
+    "UPDATEPATH": "url",
+    "FILEMANIFEST": [
+        {
+            "FILENAME": "",
+            "VERSION":""
+        }
+    ]
+    "BOOTMODE": "normal"
+}
