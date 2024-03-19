@@ -1,14 +1,14 @@
 {
   "NAME": "test",
-  "UPDATEPATH": "someurl/something",
+  "UPDATEPATH": "https://raw.githubusercontent.com/EvolvedSupplyChain/otaTest/main/",
   "FILEMANIFEST": [
     {
-      "FILENAME": "bob.py",
+      "FILENAME": "logger.py",
       "VERSION": "3",
       "CHECKFLAG": true
     },
     {
-      "FILENAME": "bill.py",
+      "FILENAME": "test.txt",
       "VERSION": "6",
       "CHECKFLAG": false
     }
