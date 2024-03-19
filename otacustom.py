@@ -87,8 +87,9 @@ class OTAUpdater:
                 f.write(self.latest_code)
             os.rename(self.tempString, self.filename)
             self.current_version = self.latest_version
+            #with open('config.json',
             self.latest_code = None
-            return True
+            return self.current_version
             
         except Exception as error:
             print(error)
@@ -157,7 +158,7 @@ class OTAUpdater:
     def rolling_check_and_install(self):
         if self.check_for_updates():
             if self.fetch_latest_code():
-                if self.update_no_reset():
-                    return True
-                else:
-                    return False
+                self.update_no_reset()
+                    #return True
+            else:
+                return False
