@@ -2,7 +2,8 @@
 import secretVars
 import json
 import time
-
+#test of main update
+print("main updated")
 with open("config.json",'r') as f:
     config = json.load(f)
 
