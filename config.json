@@ -11,6 +11,16 @@
       "FILENAME": "test.txt",
       "VERSION": "6",
       "CHECKFLAG": false
+    },
+    {
+      "FILENAME": "main.py",
+      "VERSION": "3",
+      "CHECKFLAG": false
+    },
+    {
+      "FILENAME": "config.json",
+      "VERSION": "6",
+      "CHECKFLAG": false
     }
   ],
   "BOOTMODE": 0
