@@ -1,12 +1,18 @@
 import machine
 import time
-#test test test
 
-print("Attempt number 1")
-led = machine.Pin(25, machine.Pin.OUT)
-led.on()
+def log_data():
+    print("Attempt number 1")
+    led = machine.Pin('LED', machine.Pin.OUT)
+        
+    while True:
+        try:
+            led.toggle()
+        except Exception as error:
+            print(error)
+            
+        print("5555")
+        time.sleep(1)
+    
+    return
 
-
-while True:
-    time.sleep(1)
-    led.toggle()
